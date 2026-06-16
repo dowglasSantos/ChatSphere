@@ -1,5 +1,5 @@
 // Tabela de usuarios
-CREATE TABLE user (
+CREATE TABLE tb_user (
    id BIGSERIAL PRIMARY KEY,
    username VARCHAR(30) NOT NULL UNIQUE,
    email VARCHAR(255) NOT NULL UNIQUE,
