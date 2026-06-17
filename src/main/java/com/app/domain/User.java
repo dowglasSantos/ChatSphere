@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -18,7 +19,7 @@ public class User {
     @Id
     @GeneratedValue(generator = "seq_id", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "seq_id", sequenceName = "seq_id", allocationSize = 1, initialValue = 1)
-    private String id;
+    private UUID id;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
