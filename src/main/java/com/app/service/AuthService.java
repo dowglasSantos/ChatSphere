@@ -7,7 +7,9 @@ import com.app.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AuthService {
     private final IUserRepository userRepository;
     private final JwtService jwtService;
@@ -28,7 +30,7 @@ public class AuthService {
                 }
         );
 
-        if(!passwordEncoder.matches(loginRequestDTO.password_hase(), user.getPassword())) {
+        if(!passwordEncoder.matches(loginRequestDTO.password_hash(), user.getPassword())) {
             throw new RuntimeException("incorrect password");
         }
 
